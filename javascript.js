@@ -51,7 +51,7 @@ function AddMsgToChatPane(msg)
     }
     else if (msg.Person = "moderator")
     {
-        entry.className = "mediatormsg chatmsg";
+        entry.className = "moderatormsg chatmsg";
     }
 
     document.getElementById("chatpane").appendChild(entry);
