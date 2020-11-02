@@ -10,6 +10,12 @@ if (meetingid == null || role == null)
     document.getElementById("ErrorMsg").innerText = "Parameters meetingid and/or role were null.";
     document.getElementById("display").remove();
 }
+else if (role.toLowerCase() != "plaintiff" && role.toLowerCase() != "moderator" && role.toLowerCase() != "defendant")
+{
+    document.getElementById("ErrorMsg").classList.remove("hidden");
+    document.getElementById("ErrorMsg").innerText = "Role " + role.toLowerCase() + " not recognized. Please only use plaintiff, moderator, or defendant.";
+    document.getElementById("display").remove();
+}
 else //Normal course of action
 {
     Refresh();
