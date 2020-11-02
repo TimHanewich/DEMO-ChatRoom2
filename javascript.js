@@ -12,7 +12,7 @@ if (meetingid == null || role == null)
 }
 else //Normal course of action
 {
-    
+    Refresh();
 }
 
 
@@ -55,4 +55,25 @@ function AddMsgToChatPane(msg)
     }
 
     document.getElementById("chatpane").appendChild(entry);
+}
+
+function SendMsg()
+{
+    var msg = document.getElementById("txt").value;
+    if (msg != null && msg != "")
+    {
+        //Clear the input
+        document.getElementById("txt").value = "";
+
+        var req = new XMLHttpRequest();
+        req.open("post", "https://timhchatroom.azurewebsites.net/api/SendMessage?meetingid=" + meetingid + "&person=" + role);
+        req.onreadystatechange = function()
+        {
+            if (req.readyState == 4 && req.status == 200)
+            {
+                Refresh();
+            }
+        }
+        req.send(msg);
+    }
 }
