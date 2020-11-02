@@ -63,3 +63,10 @@
     height: 100%;
     width: 100%;
 }
+
+#chatpane
+{
+    grid-area: chat;
+    height: 100%;
+    width: 100%;
+}
