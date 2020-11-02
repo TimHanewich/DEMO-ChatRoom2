@@ -1,3 +1,8 @@
+*
+{
+    font-family: sans-serif;
+}
+
 .hidden
 {
     display: none;
@@ -69,4 +74,31 @@
     grid-area: chat;
     height: 100%;
     width: 100%;
+    overflow: scroll;
 }
+
+.chatmsg
+{
+    font-size: 20px;
+}
+
+.plaintiffmsg
+{
+    text-align: left;
+    margin-left: 15px;
+    color: red;
+}
+
+.mediatormsg
+{
+    text-align: center;
+    color: black;
+}
+
+.defendantmsg
+{
+    text-align: right;
+    margin-right: 15px;
+    color: blue;
+}
+
